@@ -1,0 +1,18 @@
+com/example/liang/DatabaseHelper.java
+ com.example.liang.DatabaseHelper
+com/example/liang/BuildConfig.java
+ com.example.liang.BuildConfig
+com/example/liang/QrScan.java
+ com.example.liang.QrScan
+com/example/liang/DialogFragment.java
+ com.example.liang.DialogFragment
+ com.example.liang.DialogFragment$1
+com/example/liang/MainActivity.java
+ com.example.liang.MainActivity
+ com.example.liang.MainActivity$1
+ com.example.liang.MainActivity$2
+ com.example.liang.MainActivity$3
+com/example/liang/RecordListAdapter.java
+ com.example.liang.RecordListAdapter
+com/example/liang/Record.java
+ com.example.liang.Record

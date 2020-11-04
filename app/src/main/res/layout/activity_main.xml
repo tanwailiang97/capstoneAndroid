@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <ViewFlipper
+        android:id="@+id/ViewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/setting_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/setting_page"
+        />
+
+
+    <include
+        android:id="@+id/main_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/main_page"/>
+
+
+    <include
+        android:id="@+id/record_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/record_page"
+        />
+
+    </ViewFlipper>
+
+</RelativeLayout>
