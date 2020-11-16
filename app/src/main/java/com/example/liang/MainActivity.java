@@ -11,16 +11,17 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.karumi.dexter.Dexter;
@@ -33,7 +34,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     //Variable
     private static final int TOTAL_PAGE = 2;
     private int currentPage = 1;
-    private String mName = "" , mMatric = "";
+    private String mName = "" , mId = "";
 
 
     DatabaseHelper mDatabaseHelper;
@@ -87,10 +90,10 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.showNext();
 
         mName = mPreferences.getString("Name","");
-        mMatric = mPreferences.getString("Matric","");
+        mId = mPreferences.getString("Matric","");
 
         tvUserName.setText(mName);
-        tvUserMatric.setText(mMatric);
+        tvUserMatric.setText(mId);
 
         runTimePermission();
         checkUserDetails();
@@ -119,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkUserDetails() {
-        if (mName.equals("")||mMatric.equals("")){
+        if (mName.equals("")|| mId.equals("")){
             updateName();
         }
     }
@@ -163,25 +166,48 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG, "getData: Web pressed");
         String result ="";
-        String url = "http://192.168.50.8:3000/hello";
+        String url = "http://192.168.50.8:3000/QrScan";
         
         RequestQueue queue = Volley.newRequestQueue(this);
 
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        StringRequest jsonObjRequest = new StringRequest(
+
+                Request.Method.POST,
+                url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Log.d(TAG, "onResponse: " + response);
+
+                        Log.d(TAG, "onResponse:" + response);
                     }
-                }, new Response.ErrorListener(){
+                },
+                new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        VolleyLog.d("volley", "Error: " + error.getMessage());
+                        error.printStackTrace();
+                        Log.e(TAG, "onErrorResponse: " + error );
+                    }
+                }) {
 
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, "onErrorResponse: " + error );
+            public String getBodyContentType() {
+                return "application/x-www-form-urlencoded; charset=UTF-8";
             }
-        });
-        queue.add(stringRequest);
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("username", mName);
+                params.put("id", mId);
+                return params;
+            }
+
+        };
+
+        queue.add(jsonObjRequest);
 
     }
 
@@ -218,11 +244,11 @@ public class MainActivity extends AppCompatActivity {
         mEditor.putString("Name",Name);
         mName = Name;
         mEditor.putString("Matric",Matric);
-        mMatric = Matric;
+        mId = Matric;
         mEditor.apply();
         Log.d(TAG, "PreferenceEdit: Name Updated");
         tvUserName.setText(mName);
-        tvUserMatric.setText(mMatric);
+        tvUserMatric.setText(mId);
     }
 
 
