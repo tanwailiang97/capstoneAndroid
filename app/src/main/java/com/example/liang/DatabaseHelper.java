@@ -11,7 +11,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper{
 
     private static final String TAG = "DatabaseHelper";
 
@@ -21,6 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL3 = "time";
     private static final String COL4 = "location";
     private static final String COL5 = "temperature";
+
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -45,13 +46,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String date, String time, String location, String temperature){
+    public boolean addData(Record record){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL2, date);
-        contentValues.put(COL3, time);
-        contentValues.put(COL4, location);
-        contentValues.put(COL5, temperature);
+        contentValues.put(COL2, record.getDate());
+        contentValues.put(COL3, record.getTime());
+        contentValues.put(COL4, record.getLocation());
+        contentValues.put(COL5, record.getTemperature());
         Log.d(TAG, "addData: Adding data to " + TABLE_NAME);
 
         long result = db.insert(TABLE_NAME,null,contentValues);

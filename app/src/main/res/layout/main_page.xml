@@ -18,20 +18,22 @@
         android:layout_below="@+id/btnQRScan"
         android:layout_centerHorizontal="true"
         android:text="Web"
-        android:onClick="getData"/>
+        android:visibility="gone"/>
 
     <EditText
         android:id="@+id/etLocation"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_below="@+id/btnWeb"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
     <EditText
         android:id="@+id/etTemperature"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_below="@+id/etLocation"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
 
     <Button
         android:layout_width="100dp"
@@ -39,7 +41,8 @@
         android:layout_below="@id/etTemperature"
         android:layout_centerHorizontal="true"
         android:text="Add"
-        android:onClick="addDataOnClick"/>
+        android:onClick="addDataOnClick"
+        android:visibility="gone"/>
 
 
 </RelativeLayout>

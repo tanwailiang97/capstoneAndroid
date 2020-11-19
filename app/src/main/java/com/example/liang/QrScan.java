@@ -1,5 +1,6 @@
 package com.example.liang;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -26,8 +27,11 @@ public class QrScan extends AppCompatActivity implements ZXingScannerView.Result
     public void handleResult(Result rawResult) {
 
         Log.d(TAG, "handleResult: " + rawResult.getText());
-        //result = rawResult.getText();
-        onBackPressed();
+        Intent i = new Intent(this, MainActivity.class);
+        String result = rawResult.getText();
+        i.putExtra("QRString",result);
+        startActivity(i);
+ //       onBackPressed();
     }
 
     @Override

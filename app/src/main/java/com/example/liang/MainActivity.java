@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etLocation, etTemperature;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,10 +95,25 @@ public class MainActivity extends AppCompatActivity {
 
         runTimePermission();
         checkUserDetails();
+        getQRData();
 
+        lvRecordList.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Log.d(TAG, "onSwipeLeft: Swipped Left");
+                swapNext();
+                // your swipe right here.
+            }
+        });
     }
 
+    @Override
+    protected void onResume() {
+        Log.d(TAG, "onResume: Resumed");
 
+        super.onResume();
+    }
 
     private void runTimePermission(){
         Dexter.withContext(this).withPermissions(
@@ -132,10 +145,6 @@ public class MainActivity extends AppCompatActivity {
         dialog.show(getSupportFragmentManager(), "DialogFragment");
     }
 
-    private void readFile(){
-
-    }
-
     float x1,x2;
 
     @Override
@@ -162,14 +171,11 @@ public class MainActivity extends AppCompatActivity {
         return super.onTouchEvent(event);
     }
 
-    public void getData(View view){
+    private void volleyData(String url){
 
         Log.d(TAG, "getData: Web pressed");
-        String result ="";
-        String url = "http://192.168.50.8:3000/QrScan";
         
         RequestQueue queue = Volley.newRequestQueue(this);
-
 
         StringRequest jsonObjRequest = new StringRequest(
 
@@ -178,8 +184,9 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
                         Log.d(TAG, "onResponse:" + response);
+                        String temperature = response.split(":")[1];
+                        volleyAddData(temperature);
                     }
                 },
                 new Response.ErrorListener() {
@@ -211,9 +218,43 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void volleyAddData(String temperature){
+
+
+        Date date = Calendar.getInstance().getTime();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+        String strDate = dateFormat.format(date);
+        String strTime = timeFormat.format(date);
+
+        String location = "Testing";
+        Record record = new Record();
+        record.setDate(strDate);
+        record.setTime(strTime);
+        record.setLocation(location);
+        record.setTemperature(temperature);
+
+        boolean insertData = mDatabaseHelper.addData(record);
+
+        if(insertData){
+            Log.d(TAG, "addingData:" + record.getDate() + "; " + record.getTime() + "; " +
+                    record.getLocation() +"; " + record.getTemperature() + "successfully added");
+        }
+        else{
+            Log.d(TAG, "addingData: Fail adding data");
+        }
+        Log.d(TAG, "addData: "+ strDate + strTime + location + temperature);
+    }
+
     public void qRScan(View view){
         Log.d(TAG, "QRScan: Starting");
         startActivity(new Intent(getApplicationContext(),QrScan.class));
+    }
+
+    private void getQRData(){
+        Intent i = getIntent();
+        String url = i.getStringExtra("QRString");
+        volleyData(url);
     }
 
     private void swapPrevious(){
@@ -254,35 +295,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void editOnClick(View view){
         updateName();
-    }
-
-    public void addDataOnClick(View view){
-        Date date = Calendar.getInstance().getTime();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-        String strDate = dateFormat.format(date);
-        String strTime = timeFormat.format(date);
-
-        String strLocation = etLocation.getText().toString();
-        String strTemperature = etTemperature.getText().toString();
-
-        etLocation.setText("");
-        etTemperature.setText("");
-
-        addingData(strDate , strTime, strLocation , strTemperature);
-        Log.d(TAG, "addDataOnClick: " + strDate + strTime + strLocation + strTemperature);
-    }
-
-    private void addingData(String date, String time, String location, String temperature){
-        boolean insertData = mDatabaseHelper.addData(date, time, location, temperature);
-
-        if(insertData){
-            Log.d(TAG, "addingData:" + date + "; " + time + "; " +
-                    location +"; " + temperature + "successfully added");
-        }
-        else{
-            Log.d(TAG, "addingData: Fail adding data");
-        }
     }
 
     private void displayData(){
