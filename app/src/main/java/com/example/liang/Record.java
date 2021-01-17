@@ -4,10 +4,8 @@ public class Record {
     private String date;
     private String time;
     private String location;
-    private String temperature;
-
-
-
+    private int state;
+    private String inOut;
 
     public String getDate() {
         return date;
@@ -21,12 +19,12 @@ public class Record {
         return location;
     }
 
-    public String getTemperature() {
-        return temperature;
+    public int getState() {
+        return state;
     }
 
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
+    public void setState(int state) {
+        this.state = state;
     }
 
     public void setLocation(String location) {
@@ -39,5 +37,13 @@ public class Record {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getInOut() {
+        return inOut;
+    }
+
+    public void setInOut(String inOut) {
+        this.inOut = inOut;
     }
 }

@@ -14,19 +14,20 @@
         android:hint="User Name"
         android:textSize="25dp"/>
     <TextView
-        android:id="@+id/tvUserMatric"
+        android:id="@+id/tvUserPassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/tvUserName"
         android:background="@android:color/transparent"
         android:gravity="center"
-        android:hint="Matric No"
+        android:hint="Password"
+        android:inputType="textPassword"
         android:textSize="25dp"/>
     <Button
         android:id="@+id/btnEditData"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_below="@+id/tvUserMatric"
+        android:layout_below="@+id/tvUserPassword"
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
         android:gravity="center_vertical|right"

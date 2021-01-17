@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="100">
+    android:weightSum="100"
+    android:id="@+id/llData">
 
 
     <TextView
@@ -34,19 +35,20 @@
             android:id="@+id/tvTime"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="30"
+            android:layout_weight="20"
             android:textSize="25sp"
             android:layout_margin="20px"
             android:textColor="#9F9F9F"/>
 
         <TextView
-            android:id="@+id/tvTemperature"
+            android:id="@+id/tvInOut"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="30"
+            android:layout_weight="40"
             android:textSize="25sp"
             android:layout_margin="20px"
             android:textColor="#9F9F9F"/>
+
 
     </LinearLayout>
 

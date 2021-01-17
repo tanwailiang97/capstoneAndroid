@@ -14,3 +14,4 @@
 .cxx
 local.properties
 settings.gradle
+/app/src/main/res/values/secrets.xml

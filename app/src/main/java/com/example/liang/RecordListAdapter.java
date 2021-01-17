@@ -1,10 +1,12 @@
 package com.example.liang;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -36,10 +38,11 @@ public class RecordListAdapter extends ArrayAdapter<Record> {
             TextView location = convertView.findViewById(R.id.tvLocation);
             TextView date = convertView.findViewById(R.id.tvDate);
             TextView time = convertView.findViewById(R.id.tvTime);
-            TextView temperature = convertView.findViewById(R.id.tvTemperature);
+            TextView inOut = convertView.findViewById(R.id.tvInOut);
+            LinearLayout llData = convertView.findViewById(R.id.llData);
 
             if(location != null){
-                location.setText(record.getLocation());
+                location.setText(record.getLocation().replace("%20"," "));
             }
             if(date != null){
                 date.setText(record.getDate());
@@ -47,9 +50,16 @@ public class RecordListAdapter extends ArrayAdapter<Record> {
             if(time != null){
                 time.setText(record.getTime());
             }
-            if(temperature != null){
-                String text = record.getTemperature() + "°C";
-                temperature.setText(text);
+            if(llData != null){
+                if(record.getState()==0){
+                    llData.setBackgroundColor(Color.RED);
+                }
+                else{
+                    llData.setBackgroundColor(Color.GREEN);
+                }
+            }
+            if(inOut != null){
+                inOut.setText(record.getInOut());
             }
         }
 

@@ -26,7 +26,7 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         View view = inflater.inflate(R.layout.dialog_fragment,container,false);
 
         enterName = view.findViewById(R.id.EnterName);
-        enterMatric = view.findViewById(R.id.EnterMatric);
+        enterMatric = view.findViewById(R.id.EnterPassword);
         dialogUpdate = view.findViewById(R.id.DialogUpdate);
 
         dialogUpdate.setOnClickListener(new View.OnClickListener() {

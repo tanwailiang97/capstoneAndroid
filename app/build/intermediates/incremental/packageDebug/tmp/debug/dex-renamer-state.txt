@@ -1,4 +1,4 @@
-#Fri Nov 20 02:47:29 SGT 2020
-base.0=D\:\\Users\\Tan Wai Liang\\Desktop\\Dev\\Programming\\Liang\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Sun Jan 17 19:05:57 SGT 2021
+base.0=D\:\\Programming\\Liang\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

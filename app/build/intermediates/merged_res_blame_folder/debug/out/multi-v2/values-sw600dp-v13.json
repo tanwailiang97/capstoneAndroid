@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Users\\Tan Wai Liang\\Desktop\\Dev\\Programming\\Liang\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "D:\\Programming\\Liang\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Tan Wai Liang\\.gradle\\caches\\transforms-2\\files-2.1\\750e11957bf7041179375a87d64fa3cb\\material-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",

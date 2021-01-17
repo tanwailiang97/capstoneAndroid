@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Users\\Tan Wai Liang\\Desktop\\Dev\\Programming\\Liang\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "outputFile": "D:\\Programming\\Liang\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Tan Wai Liang\\.gradle\\caches\\transforms-2\\files-2.1\\3f3267c357015e2a14bfc685928e8b2f\\appcompat-1.0.2\\res\\values-h720dp-v13\\values-h720dp-v13.xml",

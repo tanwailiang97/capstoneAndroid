@@ -6,43 +6,24 @@
 
     <Button
         android:id="@+id/btnQRScan"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
+        android:textSize="35dp"
         android:text="QRScan"
+        android:background="@drawable/button_shape"
         android:onClick="qRScan"/>
-    <Button
-        android:id="@+id/btnWeb"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/btnQRScan"
-        android:layout_centerHorizontal="true"
-        android:text="Web"
-        android:visibility="gone"/>
 
-    <EditText
-        android:id="@+id/etLocation"
-        android:layout_width="100dp"
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/btnWeb"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone"/>
-    <EditText
-        android:id="@+id/etTemperature"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/etLocation"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone"/>
+        android:layout_below="@id/btnQRScan"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:onClick="changeState"/>
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/etTemperature"
-        android:layout_centerHorizontal="true"
-        android:text="Add"
-        android:onClick="addDataOnClick"
-        android:visibility="gone"/>
 
 
 </RelativeLayout>
