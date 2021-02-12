@@ -281,23 +281,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void getQRData() {
         Intent i = getIntent();
-        String url = i.getStringExtra("QRString");
-        if(url.contains("http://tanwailiang.ddns.net/phone/add/")){
-            volleyData(url);
+        if (i.getStringExtra("QRString") != null){
+            String url = i.getStringExtra("QRString");
+            if(url.contains("http://tanwailiang.ddns.net/phone/add/")){
+                volleyData(url);
+            }
+            else if(url.contains("https://mysejahtera.malaysia.gov.my/qrscan?") &&
+                    url.contains("&ln=")){
+                String sejahteraUrl = "http://tanwailiang.ddns.net/phone/add/" +
+                        url.split("&ln=",0)[1];
+                sejahteraUrl = sejahteraUrl.split("&",0)[0];
+                Log.d(TAG, "getQRData:URL " +sejahteraUrl);
+                volleyData(sejahteraUrl);
+            }
+            else{
+                Toast.makeText(MainActivity.this,"Please Provide an Valid QR Code",Toast.LENGTH_LONG).show();
+            }
+            fetchLocation();
         }
-        else if(url.contains("https://mysejahtera.malaysia.gov.my/qrscan?") &&
-                url.contains("&ln=")){
-            String sejahteraUrl = "http://tanwailiang.ddns.net/phone/add/" +
-                    url.split("&ln=",0)[1];
-            sejahteraUrl = sejahteraUrl.split("&",0)[0];
-            Log.d(TAG, "getQRData:URL " +sejahteraUrl);
-            volleyData(sejahteraUrl);
-        }
-        else{
-            Toast.makeText(MainActivity.this,"Please Provide an Valid QR Code",Toast.LENGTH_LONG).show();
-        }
-        fetchLocation();
-
     }
 
     private void swapPrevious() {

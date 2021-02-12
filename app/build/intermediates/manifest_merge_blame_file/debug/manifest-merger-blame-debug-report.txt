@@ -51,49 +51,48 @@
 27-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:19:9-54
 28        android:supportsRtl="true"
 28-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:20:9-35
-29        android:testOnly="true"
-30        android:theme="@style/Theme.AppCompat.NoActionBar"
-30-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:21:9-59
-31        android:usesCleartextTraffic="true" >
-31-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:22:9-44
-32        <activity android:name="com.example.liang.QrScan" />
-32-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:25:9-53
-32-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:25:19-41
-33        <activity android:name="com.example.liang.MainActivity" >
-33-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:26:9-32:20
-33-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:26:19-47
-34            <intent-filter>
-34-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:27:13-31:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:28:17-69
-35-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:28:25-66
-36
-37                <category android:name="android.intent.category.LAUNCHER" />
-37-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:30:17-77
-37-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:30:27-74
-38            </intent-filter>
-39        </activity>
-40        <activity
-40-->[com.karumi:dexter:6.2.1] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\3708b9421f7990d07c52286083a8bf92\jetified-dexter-6.2.1\AndroidManifest.xml:27:9-29:72
-41            android:name="com.karumi.dexter.DexterActivity"
-41-->[com.karumi:dexter:6.2.1] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\3708b9421f7990d07c52286083a8bf92\jetified-dexter-6.2.1\AndroidManifest.xml:28:13-60
-42            android:theme="@style/Dexter.Internal.Theme.Transparent" />
-42-->[com.karumi:dexter:6.2.1] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\3708b9421f7990d07c52286083a8bf92\jetified-dexter-6.2.1\AndroidManifest.xml:29:13-69
-43        <activity
-43-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-44            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-44-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-45            android:exported="false"
-45-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-46            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-46-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-47
-48        <meta-data
-48-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-49            android:name="com.google.android.gms.version"
-49-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-50            android:value="@integer/google_play_services_version" />
-50-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-51    </application>
-52
-53</manifest>
+29        android:theme="@style/Theme.AppCompat.NoActionBar"
+29-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:21:9-59
+30        android:usesCleartextTraffic="true" >
+30-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:22:9-44
+31        <activity android:name="com.example.liang.QrScan" />
+31-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:25:9-53
+31-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:25:19-41
+32        <activity android:name="com.example.liang.MainActivity" >
+32-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:26:9-32:20
+32-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:26:19-47
+33            <intent-filter>
+33-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:27:13-31:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:28:17-69
+34-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:28:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:30:17-77
+36-->D:\Programming\Liang\app\src\main\AndroidManifest.xml:30:27-74
+37            </intent-filter>
+38        </activity>
+39        <activity
+39-->[com.karumi:dexter:6.2.1] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\3708b9421f7990d07c52286083a8bf92\jetified-dexter-6.2.1\AndroidManifest.xml:27:9-29:72
+40            android:name="com.karumi.dexter.DexterActivity"
+40-->[com.karumi:dexter:6.2.1] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\3708b9421f7990d07c52286083a8bf92\jetified-dexter-6.2.1\AndroidManifest.xml:28:13-60
+41            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+41-->[com.karumi:dexter:6.2.1] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\3708b9421f7990d07c52286083a8bf92\jetified-dexter-6.2.1\AndroidManifest.xml:29:13-69
+42        <activity
+42-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+43            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+43-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+44            android:exported="false"
+44-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+45            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+45-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+46
+47        <meta-data
+47-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+48            android:name="com.google.android.gms.version"
+48-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+49            android:value="@integer/google_play_services_version" />
+49-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Tan Wai Liang\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+50    </application>
+51
+52</manifest>
